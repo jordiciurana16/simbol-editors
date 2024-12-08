@@ -1,59 +1,25 @@
-# Angular19LintDocker
+# Angular 19 Lint Docker Boilerplate
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.4.
+This is a boilerplate project for Angular applications, designed to streamline development with a focus on best practices and ease of setup. The project is integrated with the following tools and features:
 
-## Development server
+	•	ESLint: For consistent and configurable linting.
+	•	Prettier: For automatic code formatting to ensure a uniform code style.
+	•	Husky: For precommit hooks that run linting and formatting checks before commits.
+	•	Docker: Containerized environment for easy and reproducible development setups.
 
-To start a local development server, run:
+## Features:
+	•	Standard Angular Host: The application runs on the default Angular development server with no additional configurations needed.
+	•	Organized Imports: Imports are automatically managed and organized for clarity and consistency.
+	•	Simplified Asset Handling: Assets are configured to be referenced without specifying the full path. For example, you can use dog.jpg directly instead of assets/dog.jpg.
 
-```bash
-ng serve
-```
+This boilerplate is perfect for Angular projects that require a quick and clean setup with essential tools already configured.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Getting Started
 
-## Code scaffolding
+To get started, simply clone the repository and follow the instructions to set up the project with Docker:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+	1.	Clone this repository.
+	2.	Run docker-compose up to build and start the Docker container.
+	3.	Access the project on the standard Angular development host.
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+For further configuration and usage, refer to the individual tool documentation (ESLint, Prettier, Husky, Docker).
