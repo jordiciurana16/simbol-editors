@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
 })
 export class TestComponent {
   para = 'this is my test component';
+
+  para2 = 'test test';
 }
