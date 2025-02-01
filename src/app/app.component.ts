@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+import { CheckboxModule } from 'primeng/checkbox';
+import { CardModule } from 'primeng/card';
 
 import { TestComponent } from '@app/components/testcomponent.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TestComponent],
+  imports: [RouterOutlet, TestComponent, ButtonModule, CheckboxModule, FormsModule, CardModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -22,4 +26,11 @@ export class AppComponent {
   p9 = 'para9';
 
   dog = 'dog.jpg';
+
+  toggleDarkMode() {
+    const element = document.querySelector('html');
+    if (element !== null) {
+      element.classList.toggle('my-app-dark');
+    }
+  }
 }
