@@ -25,8 +25,8 @@ export const MyPreset = definePreset(Aura, {
           focusColor: '#ffffff',
         },
         custom: {
-            cardcolor: '{blue.500}',
-        }
+          cardcolor: '{blue.500}',
+        },
       },
       dark: {
         primary: {
@@ -49,8 +49,26 @@ export const MyPreset = definePreset(Aura, {
           focusColor: 'rgba(255,255,255,.87)',
         },
         custom: {
-            cardcolor: '{green.500}',
-        }
+          cardcolor: '{green.500}',
+        },
+      },
+    },
+  },
+  components: {
+    card: {
+      colorScheme: {
+        light: {
+          root: {
+            background: '{pink.100}',
+            borderRadius: '4px',
+          },
+        },
+        dark: {
+          root: {
+            background: '{custom.cardcolor}',
+            borderRadius: '4px',
+          },
+        },
       },
     },
   },

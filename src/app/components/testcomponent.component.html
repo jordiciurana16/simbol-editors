@@ -1,1 +1,20 @@
 <p>{{ para }}</p>
+
+<div>
+    <p-card>
+      <p-header>
+        <h1>{{ header_global_theme }}</h1>
+      </p-header>
+      <p-footer>
+        <h2>{{ footer_global_theme }}</h2>
+      </p-footer>
+    </p-card>
+    <p-card [dt]="localStyle">
+      <p-header>
+        <h1>{{ header_local }}</h1>
+      </p-header>
+      <p-footer>
+        <h2>{{ footer_local }}</h2>
+      </p-footer>
+    </p-card>
+  </div>

@@ -1,5 +1,5 @@
 :host {
-    ::ng-deep .p-card {
+    ::ng-deep .app_card > .p-card {
         background-color: var(--p-custom-cardcolor);
     }
 }

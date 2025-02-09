@@ -246,7 +246,9 @@
       <h1>Hello, {{ title }}</h1>
       <p-button>Button</p-button>
       <p-button label="Toggle Dark Mode" (onClick)="toggleDarkMode()"/>
-      <p-card></p-card>
+      <p-card class="app_card">
+        <h3>App Card themed with ng-deep</h3>
+      </p-card>
       <p>Congratulations! Your app is running. 🎉</p>
       <p>{{ p }}</p>
       <p>{{ p }}</p>
