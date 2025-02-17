@@ -4,17 +4,17 @@ import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 import { CardModule } from 'primeng/card';
 
-import { TestComponent } from '@app/components/testcomponent.component';
 import { FormsModule } from '@angular/forms';
+import { ParentComponent } from "./components/parent/parent.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TestComponent, ButtonModule, CheckboxModule, FormsModule, CardModule],
+  imports: [RouterOutlet, ButtonModule, CheckboxModule, FormsModule, CardModule, ParentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'angular19-lint-docker';
+  title = '[dt] styling Menu Primeng19';
   p = 'paragraph1';
   p2 = 'paragraph2';
   p3 = 'paragraph3';

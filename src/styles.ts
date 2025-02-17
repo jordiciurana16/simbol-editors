@@ -59,7 +59,7 @@ export const MyPreset = definePreset(Aura, {
       colorScheme: {
         light: {
           root: {
-            background: '{pink.100}',
+            background: '{indigo.400}',
             borderRadius: '4px',
           },
         },
