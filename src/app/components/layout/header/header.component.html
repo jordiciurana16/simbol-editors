@@ -1,0 +1,36 @@
+<p-menubar class="flex justify-content-between w-full">
+  <ng-template pTemplate="start">
+    <!-- Logo sempre visible -->
+    <a routerLink="/home">
+      <app-logo class="h-2rem"></app-logo>
+    </a>
+  </ng-template>
+
+  <ng-template pTemplate="end">
+    <div class="hidden md:flex align-items-center gap-4">
+      <p-iconfield class="flex align-items-center">
+        <input pInputText placeholder="Cerca " class="text-base" />
+        <p-inputicon class="pi pi-search text-lg" />
+      </p-iconfield>
+      <i class="pi pi-user text-lg"></i>
+      <i class="pi pi-shopping-bag text-lg"></i>
+    </div>
+
+    <!-- Menú hamburguesa només en mòbils -->
+    <p-button
+      icon="pi pi-bars"
+      class="md:hidden text-2xl p-button-text"
+      (click)="menuVisible = true"
+    >
+    </p-button>
+  </ng-template>
+</p-menubar>
+
+<!-- Sidebar per a mòbils -->
+<p-sidebar [(visible)]="menuVisible" position="left">
+  <div class="flex flex-column gap-3 p-4">
+    <a routerLink="/home" class="text-lg">Inici</a>
+    <a routerLink="/llibres" class="text-lg">Llibres</a>
+    <a routerLink="/activitats" class="text-lg">Activitats</a>
+  </div>
+</p-sidebar>

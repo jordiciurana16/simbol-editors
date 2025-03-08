@@ -33,7 +33,10 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "node_modules/primeflex/primeflex.css",
+              "src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -102,9 +105,7 @@
     }
   },
   "cli": {
-    "schematicCollections": [
-      "angular-eslint"
-    ],
+    "schematicCollections": ["angular-eslint"],
     "analytics": false
   }
 }
