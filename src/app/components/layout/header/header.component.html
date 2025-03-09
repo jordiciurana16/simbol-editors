@@ -1,13 +1,19 @@
-<p-menubar class="flex justify-content-between w-full">
+<p-menubar>
   <ng-template pTemplate="start">
-    <!-- Logo sempre visible -->
-    <a routerLink="/home">
-      <app-logo class="h-2rem"></app-logo>
-    </a>
+    <div class="flex align-items-center gap-4">
+      <!-- Logo sempre visible -->
+      <a routerLink="/">
+        <app-logo class="h-2rem"></app-logo>
+      </a>
+      <div class="hidden md:flex align-items-center gap-4">
+        <a routerLink="/llibres" class="text-lg">Llibres</a>
+        <a routerLink="/activitats" class="text-lg">Activitats</a>
+      </div>
+    </div>
   </ng-template>
 
   <ng-template pTemplate="end">
-    <div class="hidden md:flex align-items-center gap-4">
+    <div class="hidden sm:flex align-items-center gap-4">
       <p-iconfield class="flex align-items-center">
         <input pInputText placeholder="Cerca " class="text-base" />
         <p-inputicon class="pi pi-search text-lg" />
@@ -17,19 +23,14 @@
     </div>
 
     <!-- Menú hamburguesa només en mòbils -->
-    <p-button
-      icon="pi pi-bars"
-      class="md:hidden text-2xl p-button-text"
-      (click)="menuVisible = true"
-    >
-    </p-button>
+    <i class="pi pi-bars sm:hidden text-2xl" (click)="menuVisible = true"></i>
   </ng-template>
 </p-menubar>
 
 <!-- Sidebar per a mòbils -->
-<p-sidebar [(visible)]="menuVisible" position="left">
+<p-sidebar [(visible)]="menuVisible" position="right">
   <div class="flex flex-column gap-3 p-4">
-    <a routerLink="/home" class="text-lg">Inici</a>
+    <a routerLink="/" class="text-lg">Inici</a>
     <a routerLink="/llibres" class="text-lg">Llibres</a>
     <a routerLink="/activitats" class="text-lg">Activitats</a>
   </div>

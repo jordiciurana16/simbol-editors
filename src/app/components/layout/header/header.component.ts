@@ -9,7 +9,6 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { FormsModule } from '@angular/forms';
 import { SidebarModule } from 'primeng/sidebar';
-import { ButtonModule } from 'primeng/button'; // Add this import
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
@@ -26,7 +25,6 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     FloatLabelModule,
     FormsModule,
     SidebarModule,
-    ButtonModule, // Add this import
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
