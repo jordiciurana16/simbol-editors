@@ -6,6 +6,7 @@ import {
   RouterLinkActive,
   RouterModule
 } from "./chunk-EHWMETPT.js";
+import "./chunk-DSMJJHAG.js";
 import {
   AngleDownIcon,
   AngleRightIcon,
@@ -15,7 +16,6 @@ import {
   ConnectedOverlayScrollHandler,
   Ripple
 } from "./chunk-AS25SDHZ.js";
-import "./chunk-DSMJJHAG.js";
 import {
   BaseComponent
 } from "./chunk-ZHWUATC4.js";

@@ -1,6 +1,8 @@
+@use 'tailwindcss/base';
+@use 'tailwindcss/components';
+@use 'tailwindcss/utilities';
 @import 'primeicons/primeicons.css';
-
-@import 'tailwindcss';
+// @import 'primeflex/primeflex.css';
 
 * {
   box-sizing: border-box;

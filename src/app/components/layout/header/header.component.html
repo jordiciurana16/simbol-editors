@@ -1,12 +1,13 @@
-<header>
+<header class="bg-white shadow-md">
   <p-menubar>
     <ng-template pTemplate="start">
-      <div class="flex align-items-center gap-4">
-        <!-- Logo sempre visible -->
+      <div class="flex items-center gap-5">
+        <!-- Logo -->
         <a routerLink="/">
-          <app-logo class="h-2rem"></app-logo>
+          <app-logo class="h-8"></app-logo>
         </a>
-        <div class="hidden md:flex align-items-center gap-4">
+        <!-- Links visibles en md+ -->
+        <div class="md:flex items-center gap-5">
           <a routerLink="/llibres" class="text-lg">Llibres</a>
           <a routerLink="/esdeveniments" class="text-lg">Esdeveniments</a>
           <a routerLink="/contacte" class="text-lg">Contacte</a>
@@ -15,28 +16,28 @@
     </ng-template>
 
     <ng-template pTemplate="end">
-      <div class="hidden md:flex align-items-center gap-4">
-        <p-iconfield class="flex align-items-center">
-          <input pInputText placeholder="Cerca " class="text-base w-9rem" />
-          <p-inputicon class="pi pi-search text-lg" />
-        </p-iconfield>
+      <!-- Icons visibles en md+ -->
+      <div class="hidden md:flex items-center gap-4">
+        <div class="relative flex items-center">
+          <input pInputText placeholder="Cerca" class="text-base w-36 pr-8" />
+          <i class="pi pi-search absolute right-2 text-lg"></i>
+        </div>
         <i class="pi pi-user text-lg"></i>
         <i class="pi pi-shopping-bag text-lg"></i>
       </div>
 
+      <!-- Burger menu en md- -->
       <i
-        class="pi pi-bars md:hidden text-2xl"
+        class="block md:hidden pi pi-bars text-2xl"
         (click)="sidebarVisible = true"
       ></i>
     </ng-template>
   </p-menubar>
-  <h1 class="text-3xl font-bold underline text-center mt-10">
-    Angular v19.1 + Tailwind CSS 4.0
-  </h1>
 </header>
 
-<div class="card flex justify-content-center">
-  <aside>
+<!-- Sidebar -->
+<div class="flex justify-center">
+  <aside class="bg-white shadow-md">
     <p-sidebar
       [(visible)]="sidebarVisible"
       position="right"
@@ -45,42 +46,48 @@
       class="no-horizontal-padding"
     >
       <ng-template pTemplate="headless">
-        <div class="flex justify-content-between w-full pt-3 pb-3 px-3">
-          <div class="flex align-items-center">
-            <app-logo class="h-2rem"></app-logo>
+        <div class="flex justify-between w-full pt-3 pb-3 px-3">
+          <div class="flex items-center">
+            <app-logo class="h-8"></app-logo>
           </div>
           <i class="pi pi-times text-2xl" (click)="sidebarVisible = false"></i>
         </div>
 
-        <nav class="flex flex-column gap-4 px-3">
-          <a routerLink="/llibres" class="text-lg hover:bg-gray-200">Llibres</a>
-          <a routerLink="/esdeveniments" class="text-lg hover:bg-gray-200"
+        <nav class="flex flex-col gap-2 px-3">
+          <a routerLink="/llibres" class="text-lg hover:bg-gray-200 p-2 rounded"
+            >Llibres</a
+          >
+          <a
+            routerLink="/esdeveniments"
+            class="text-lg hover:bg-gray-200 p-2 rounded"
             >Esdeveniments</a
           >
-          <a routerLink="/contacte" class="text-lg hover:bg-gray-200"
+          <a
+            routerLink="/contacte"
+            class="text-lg hover:bg-gray-200 p-2 rounded"
             >Contacte</a
           >
         </nav>
         <p-divider></p-divider>
-        <div class="flex align-items-center px-3">
+        <div class="flex items-center px-3">
           <i class="pi pi-search text-lg mr-3"></i>
           <span class="text-lg">Cerca</span>
         </div>
         <p-divider></p-divider>
-        <div class="flex align-items-center px-3">
+        <div class="flex items-center px-3">
           <i class="pi pi-shopping-bag text-lg mr-3"></i>
           <span class="text-lg">Cistella</span>
         </div>
         <p-divider></p-divider>
-        <div class="flex align-items-center px-3">
+        <div class="flex items-center px-3">
           <i class="pi pi-user text-lg mr-3"></i>
           <div>
-            <span class="font-bold"> Jordi Ciurana </span>
+            <span class="font-bold">Jordi Ciurana</span>
             <br />
             <span class="text-sm">jordi.ciurana&#64;example.com</span>
           </div>
         </div>
-        <div class="flex justify-content-center pt-3 px-3">
+        <div class="flex justify-center pt-3 px-3">
           <button
             pButton
             type="button"
