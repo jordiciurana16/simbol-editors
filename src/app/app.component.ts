@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { ButtonModule } from 'primeng/button';
+import { LandingComponent } from './views/landing/landing.component';
+import { BooksComponent } from './views/books/books.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, ButtonModule],
+  standalone: true,
+  imports: [HeaderComponent, ButtonModule, RouterModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

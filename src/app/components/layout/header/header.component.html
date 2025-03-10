@@ -1,37 +1,91 @@
-<p-menubar>
-  <ng-template pTemplate="start">
-    <div class="flex align-items-center gap-4">
-      <!-- Logo sempre visible -->
-      <a routerLink="/">
-        <app-logo class="h-2rem"></app-logo>
-      </a>
-      <div class="hidden md:flex align-items-center gap-4">
-        <a routerLink="/llibres" class="text-lg">Llibres</a>
-        <a routerLink="/activitats" class="text-lg">Activitats</a>
+<header>
+  <p-menubar>
+    <ng-template pTemplate="start">
+      <div class="flex align-items-center gap-4">
+        <!-- Logo sempre visible -->
+        <a routerLink="/">
+          <app-logo class="h-2rem"></app-logo>
+        </a>
+        <div class="hidden md:flex align-items-center gap-4">
+          <a routerLink="/llibres" class="text-lg">Llibres</a>
+          <a routerLink="/esdeveniments" class="text-lg">Esdeveniments</a>
+          <a routerLink="/contacte" class="text-lg">Contacte</a>
+        </div>
       </div>
-    </div>
-  </ng-template>
+    </ng-template>
 
-  <ng-template pTemplate="end">
-    <div class="hidden sm:flex align-items-center gap-4">
-      <p-iconfield class="flex align-items-center">
-        <input pInputText placeholder="Cerca " class="text-base" />
-        <p-inputicon class="pi pi-search text-lg" />
-      </p-iconfield>
-      <i class="pi pi-user text-lg"></i>
-      <i class="pi pi-shopping-bag text-lg"></i>
-    </div>
+    <ng-template pTemplate="end">
+      <div class="hidden md:flex align-items-center gap-4">
+        <p-iconfield class="flex align-items-center">
+          <input pInputText placeholder="Cerca " class="text-base w-9rem" />
+          <p-inputicon class="pi pi-search text-lg" />
+        </p-iconfield>
+        <i class="pi pi-user text-lg"></i>
+        <i class="pi pi-shopping-bag text-lg"></i>
+      </div>
 
-    <!-- Menú hamburguesa només en mòbils -->
-    <i class="pi pi-bars sm:hidden text-2xl" (click)="menuVisible = true"></i>
-  </ng-template>
-</p-menubar>
+      <i
+        class="pi pi-bars md:hidden text-2xl"
+        (click)="sidebarVisible = true"
+      ></i>
+    </ng-template>
+  </p-menubar>
+</header>
 
-<!-- Sidebar per a mòbils -->
-<p-sidebar [(visible)]="menuVisible" position="right">
-  <div class="flex flex-column gap-3 p-4">
-    <a routerLink="/" class="text-lg">Inici</a>
-    <a routerLink="/llibres" class="text-lg">Llibres</a>
-    <a routerLink="/activitats" class="text-lg">Activitats</a>
-  </div>
-</p-sidebar>
+<div class="card flex justify-content-center">
+  <aside>
+    <p-sidebar
+      [(visible)]="sidebarVisible"
+      position="right"
+      [showCloseIcon]="false"
+      [baseZIndex]="10000"
+      class="no-horizontal-padding"
+    >
+      <ng-template pTemplate="headless">
+        <div class="flex justify-content-between w-full pt-3 pb-3 px-3">
+          <div class="flex align-items-center">
+            <app-logo class="h-2rem"></app-logo>
+          </div>
+          <i class="pi pi-times text-2xl" (click)="sidebarVisible = false"></i>
+        </div>
+
+        <nav class="flex flex-column gap-4 px-3">
+          <a routerLink="/llibres" class="text-lg hover:bg-gray-200">Llibres</a>
+          <a routerLink="/esdeveniments" class="text-lg hover:bg-gray-200"
+            >Esdeveniments</a
+          >
+          <a routerLink="/contacte" class="text-lg hover:bg-gray-200"
+            >Contacte</a
+          >
+        </nav>
+        <p-divider></p-divider>
+        <div class="flex align-items-center px-3">
+          <i class="pi pi-search text-lg mr-3"></i>
+          <span class="text-lg">Cerca</span>
+        </div>
+        <p-divider></p-divider>
+        <div class="flex align-items-center px-3">
+          <i class="pi pi-shopping-bag text-lg mr-3"></i>
+          <span class="text-lg">Cistella</span>
+        </div>
+        <p-divider></p-divider>
+        <div class="flex align-items-center px-3">
+          <i class="pi pi-user text-lg mr-3"></i>
+          <div>
+            <span class="font-bold"> Jordi Ciurana </span>
+            <br />
+            <span class="text-sm">jordi.ciurana&#64;example.com</span>
+          </div>
+        </div>
+        <div class="flex justify-content-center pt-3 px-3">
+          <button
+            pButton
+            type="button"
+            label="Tancar sessió"
+            class="p-button-outlined"
+          ></button>
+        </div>
+      </ng-template>
+    </p-sidebar>
+  </aside>
+</div>
